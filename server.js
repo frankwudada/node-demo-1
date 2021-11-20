@@ -25,6 +25,7 @@ var server = http.createServer(function(request, response){
     response.statusCode = 200
     response.setHeader('Content-Type', 'text/html;charset=utf-8')
     response.write(`
+      <link rel="stylesheet" href="/x">
       <h1>一级标题</h1>
     `)
     response.end()
