@@ -19,12 +19,13 @@ var server = http.createServer(function(request, response){
 
   /******** 从这里开始看，上面不要看 ************/
 
-  console.log('有个傻子发请求过来啦！路径（带查询参数）为：' + pathWithQuery)
+  console.log('有请求发过来啦！路径（带查询参数）为：' + pathWithQuery)
 
   if(path === '/'){
     response.statusCode = 200
     response.setHeader('Content-Type', 'text/html;charset=utf-8')
     response.write(`
+      <link rel="stylesheet" href="/x">
       <h1>一级标题</h1>
     `)
     response.end()
@@ -36,7 +37,7 @@ var server = http.createServer(function(request, response){
   } else {
     response.statusCode = 404
     response.setHeader('Content-Type', 'text/html;charset=utf-8')
-    response.write(`你输入的路径不存在对应的内容`)
+    response.write(`你仿问的页面不存在`)
     response.end()
   }
 
